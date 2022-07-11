@@ -14,6 +14,7 @@ export class ProductListComponent {
   imageMargin: number = 2; //but if we set a default value, we dont need to specify its type
   showImage: boolean = false; //Define a class property that keeps track of whether the images are currently displayed
   //The image is not display when the page is first loaded.
+  listFilter: string = "cart"; //Default initial value
   products: any[] = [
     {
       productId: 1,
