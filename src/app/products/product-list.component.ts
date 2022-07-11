@@ -1,16 +1,19 @@
 import { Component } from "@angular/core";
 
-//This is a PLComponent as a directve with the selector
+//This is a ProductListComponent as a directve with the selector
 //Component decorator that defines the metadata
 @Component({
   selector: "pm-products",
   templateUrl: "./product-list.component.html", //our HTML, our wiew
 })
+
 //Class wich defines are associated code
 export class ProductListComponent {
   pageTitle: string = "Product List";
-  imageWidth: number = 50;
-  imageMargin: number = 2;
+  imageWidth: number = 50; //adding data types to our properties,
+  imageMargin: number = 2; //but if we set a default value, we dont need to specify its type
+  showImage: boolean = false; //Define a class property that keeps track of whether the images are currently displayed
+  //The image is not display when the page is first loaded.
   products: any[] = [
     {
       productId: 1,
@@ -63,4 +66,9 @@ export class ProductListComponent {
       imageUrl: "assets/images/xbox-controller.png",
     },
   ];
+  //Build the methos that the event binding will call
+
+  toggleImage(): void {
+    this.showImage = !this.showImage; //! : returns false if its operand, showImage in this case, is true, and true if its false.
+  }
 }
